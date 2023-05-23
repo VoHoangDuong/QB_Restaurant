@@ -33,6 +33,7 @@ $("#employeeForm").validate({
             required: "Vui lòng nhập tên nhân viên !",
             minlength: "Vui lòng nhập tối thiểu 5 ký tự!",
             maxlength: "Vui lòng nhập tối đa chỉ có 50 ký tự!"
+            // maxlength: "Vui lòng nhập tối đa chỉ có 50 ký tự!"
         },
         phoneNumber: {
             required: "Vui lòng nhập số điện thọai !",
