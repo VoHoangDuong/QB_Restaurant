@@ -1,4 +1,4 @@
 
-Code ch?c nang BE update
+Code chuc nang BE
 
-Code ch?c nang FE b?ng Angular
+Code chuc nang FE bang Angular
