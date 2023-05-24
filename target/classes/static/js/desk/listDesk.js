@@ -10,7 +10,7 @@ function getAllDesk(){
                               <input hidden id="${desks[i].tableId}">
                               <td>${desks[i].tableName}</td>
                               ${desks[i].custom ?
-                              '<td style="color: darkred">Bàn đang có khách</td><td><button class="btn btn-warning" title="Tạm thời không thể đặt">Đã có khách</button></td>' :
+                              '<td style="color: rgba(139,0,0,0.04)">Bàn đang có khách</td><td><button class="btn btn-warning" title="Tạm thời không thể đặt">Đã có khách</button></td>' :
                               `<td style="color: darkblue">Bàn đang trống</td>
                               ${!desks[i].hidden ?
                               `${desks[i].book != null && desks[i].book !== (null +"h "+ null) ?
