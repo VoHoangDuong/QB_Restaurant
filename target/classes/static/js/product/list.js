@@ -52,7 +52,7 @@ function getAllCategory(){
 
 //----------Get all Category-----------//
 
-// ---------Get all Product------------//
+// ---------Get all Products DuongVH------------//
 
 function getAllProduct(){
     $.ajax({
@@ -87,7 +87,7 @@ function getAllProduct(){
 
 getAllProduct();
 
-// ---------Get all Product------------//
+// ---------Get all Products DuongVH------------//
 
 // ---------Get all Hidden Product------------//
 
