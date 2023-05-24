@@ -14,6 +14,7 @@ public class VoucherService implements IVoucherService {
 
     @Autowired
     private IVoucherRepository voucherRepository;
+
     @Override
     public Iterable<Voucher> findAll() {
         return voucherRepository.findAll();
@@ -26,27 +27,27 @@ public class VoucherService implements IVoucherService {
 
     @Override
     public Voucher save(Voucher voucher) {
-         return voucherRepository.save(voucher);
+        return voucherRepository.save(voucher);
     }
 
     @Override
     public void remove(Long id) {
         voucherRepository.deleteById(id);
     }
-    
+
     @Override
-    public Iterable<Voucher> findAllByVoucherValid () {
-        
+    public Iterable<Voucher> findAllByVoucherValid() {
+
         return voucherRepository.findAllByVoucherValid();
     }
-    
+
     @Override
-    public Iterable<Voucher> findAllByVoucherExpired () {
+    public Iterable<Voucher> findAllByVoucherExpired() {
         return voucherRepository.findAllByVoucherExpired();
     }
-    
+
     @Override
-    public Iterable<Voucher> findAllByVoucherIsDeleted () {
+    public Iterable<Voucher> findAllByVoucherIsDeleted() {
         return voucherRepository.findAllByVoucherIsDeleted();
     }
 
