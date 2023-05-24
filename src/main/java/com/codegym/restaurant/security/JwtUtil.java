@@ -18,7 +18,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 @Component
-public class JwtUtil {
+public class  JwtUtil {
     
     private static Logger logger = LoggerFactory.getLogger(JwtUtil.class);
     private static final String USER = "user";
