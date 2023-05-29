@@ -20,6 +20,12 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Date;
 import java.util.Optional;
 
+/**
+ * Class controller xử lý quản lý nhân viên
+ *
+ * @author DuongVH
+ * @since 29/05/2023
+ */
 @RestController
 @RequestMapping("")
 public class EmployeeController {
@@ -47,13 +53,13 @@ public class EmployeeController {
 
     @GetMapping("/listEmployee")
     @PreAuthorize("hasAnyAuthority('ADMIN')")
-    public ModelAndView listEmployee(){
+    public ModelAndView listEmployee() {
         return new ModelAndView("/dashboard/employee/listEmployee");
     }
 
     @GetMapping("/allEmployee")
-    public ResponseEntity<Iterable<Employee>> listAllEmployee(){
-        return new ResponseEntity<>(iEmployeeService.findAll(),HttpStatus.OK);
+    public ResponseEntity<Iterable<Employee>> listAllEmployee() {
+        return new ResponseEntity<>(iEmployeeService.findAll(), HttpStatus.OK);
     }
 
 
@@ -64,20 +70,20 @@ public class EmployeeController {
     }
 
     @GetMapping("/allPosition")
-    public ResponseEntity<Iterable<Position>> allPosition(){
+    public ResponseEntity<Iterable<Position>> allPosition() {
         return new ResponseEntity<>(positionService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/getEmployee")
-    public ResponseEntity<UserPrincipal> getUserByUsername(){
+    public ResponseEntity<UserPrincipal> getUserByUsername() {
         return new ResponseEntity<>(iEmployeeService.findByUsername(getPrincipal()), HttpStatus.OK);
     }
 
     @PostMapping("/createEmployee")
-    public ResponseEntity<Employee> createNewEmployee(@RequestBody Employee employee){
+    public ResponseEntity<Employee> createNewEmployee(@RequestBody Employee employee) {
         employee.setPosition(positionService.findById(employee.getPosition().getPositionId()).get());
         employee.setPassword(new BCryptPasswordEncoder().encode(employee.getPassword()));
-        if (employeeService.isContainPhone(employee.getPhone()) && employeeService.isContainUsername(employee.getUsername())){
+        if (employeeService.isContainPhone(employee.getPhone()) && employeeService.isContainUsername(employee.getUsername())) {
             employeeService.createUser(employee);
             return new ResponseEntity<>(HttpStatus.CREATED);
         }
@@ -95,15 +101,15 @@ public class EmployeeController {
     }
 
     @GetMapping("/editEmployee/{id}")
-    public ResponseEntity<Employee> employeeResponseEntity(@PathVariable Long id){
+    public ResponseEntity<Employee> employeeResponseEntity(@PathVariable Long id) {
         Employee employeeOptional = employeeService.findById(id).get();
-        return new ResponseEntity<>(employeeOptional,HttpStatus.OK);
+        return new ResponseEntity<>(employeeOptional, HttpStatus.OK);
     }
 
     @PatchMapping("/editEmployee")
-    public ResponseEntity<Employee> editEmployee(@RequestBody Employee employee){
+    public ResponseEntity<Employee> editEmployee(@RequestBody Employee employee) {
         employee.setId(employee.getId());
         employee.getPosition().setPositionName(positionService.findById(employee.getPosition().getPositionId()).get().getPositionName());
-        return new ResponseEntity<>(employeeService.save(employee),HttpStatus.OK);
+        return new ResponseEntity<>(employeeService.save(employee), HttpStatus.OK);
     }
 }
