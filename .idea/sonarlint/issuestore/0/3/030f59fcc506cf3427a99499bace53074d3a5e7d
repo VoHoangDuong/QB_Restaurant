@@ -1,0 +1,13 @@
+
+[
+java:S4684."@Replace this persistent entity with a simple POJO or DTO object.(Δ¶­όÿÿÿÿ
+[
+java:S4684="@Replace this persistent entity with a simple POJO or DTO object.(†Ίλϊÿÿÿÿ
+[
+java:S4684g"@Replace this persistent entity with a simple POJO or DTO object.(ÿϋγΉÿÿÿÿÿ
+[
+java:S1128"ERemove this unused import 'com.codegym.restaurant.model.OrderDetail'.(Η€Ά
+R
+java:S3655S"7Call "Optional#isPresent()" before accessing the value.(χ“ιόÿÿÿÿ
+M
+java:S3655h"7Call "Optional#isPresent()" before accessing the value.(λ„ϊ

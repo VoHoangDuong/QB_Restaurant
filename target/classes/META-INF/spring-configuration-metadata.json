@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "file",
+      "type": "com.duongvh.restaurant.properties.FileStorageProperties",
+      "sourceType": "com.duongvh.restaurant.properties.FileStorageProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.upload-dir",
+      "type": "java.lang.String",
+      "sourceType": "com.duongvh.restaurant.properties.FileStorageProperties"
+    }
+  ],
+  "hints": []
+}
